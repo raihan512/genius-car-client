@@ -1,8 +1,11 @@
+import { RouterProvider } from "react-router-dom";
+import { Routess } from "./Router/Routes/Routes";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
+    <div data-theme="dark" className="max-w-6xl mx-auto">
+      <RouterProvider router={Routess}></RouterProvider>
+    </div>
   );
 }
 
