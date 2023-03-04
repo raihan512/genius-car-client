@@ -6,18 +6,34 @@ const Header = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="hover:bg-transparent focus:rounded-none" to="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/">About</Link>
+        <Link className="hover:bg-transparent focus:rounded-none" to="/">
+          About
+        </Link>
       </li>
       <li>
-        <Link to="/">Contact Us</Link>
+        <Link className="hover:bg-transparent focus:rounded-none" to="/">
+          Services
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:bg-transparent focus:rounded-none" to="/">
+          Blog
+        </Link>
+      </li>
+      <li>
+        <Link className="hover:bg-transparent focus:rounded-none" to="/">
+          Contact
+        </Link>
       </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -44,14 +60,14 @@ const Header = () => {
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case text-xl">
-          <img src={logo} alt="" />
+          <img src={logo} className="h-12" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Get started</Link>
+        <Link className="btn rounded-none">Get started</Link>
       </div>
     </div>
   );

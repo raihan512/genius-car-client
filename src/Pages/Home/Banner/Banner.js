@@ -18,7 +18,7 @@ const Banner = () => {
     { id: 6, img: img6, prev: 5, next: 1 },
   ];
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full py-10">
       {banner.map((banner) => (
         <BannerItem key={banner.id} banner={banner}></BannerItem>
       ))}
