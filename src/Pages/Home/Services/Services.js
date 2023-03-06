@@ -27,6 +27,11 @@ const Services = () => {
           <Service key={service._id} service={service}></Service>
         ))}
       </div>
+      <div className="flex justify-center">
+        <button className="btn btn-outline border-orange-400 text-orange-400 hover:border-orange-400 hover:bg-orange-400 rounded-sm mt-5">
+          More Services
+        </button>
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const Service = ({ service }) => {
-  const { title, img, price, description } = service;
+  const { title, img, price } = service;
   return (
     <div className="card w-96 bg-base-100 shadow-xl rounded-md p-5">
       <figure className="">
