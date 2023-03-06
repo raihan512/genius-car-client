@@ -4,8 +4,8 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-const Login = () => {
-  const handleLogin = (event) => {
+const Signup = () => {
+  const handleSignup = (event) => {
     event.preventDefault();
   };
   return (
@@ -16,8 +16,18 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
           <div className="card-body">
-            <h1 className="text-5xl font-bold mb-5">Login now!</h1>
+            <h1 className="text-5xl font-bold mb-5">Sign Up</h1>
             <form action="">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -45,15 +55,15 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input
+                  onClick={(event) => handleSignup(event)}
                   type="submit"
                   className="btn bg-orange-400 border-orange-400"
                   value="Sign In"
-                  onClick={(event) => handleLogin(event)}
                 />
               </div>
             </form>
             <div className="text-center">
-              <p className="text-lg mt-5">Or Sign In with</p>
+              <p className="text-lg mt-5">Or Sign Up with</p>
               <div className="mt-5 mb-3">
                 <button>
                   <BsFacebook className="text-4xl m-2 text-blue-500" />
@@ -66,10 +76,10 @@ const Login = () => {
                 </button>
               </div>
               <p>
-                Don't have account?
-                <Link to="/signup" className="text-orange-400">
+                Already have account?
+                <Link to="/login" className="text-orange-400">
                   {" "}
-                  SignUp
+                  Login
                 </Link>
               </p>
             </div>
@@ -80,4 +90,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
