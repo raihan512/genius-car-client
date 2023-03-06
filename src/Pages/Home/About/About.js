@@ -35,7 +35,9 @@ const About = () => {
             humour, or randomised words which don't look even slightly
             believable.
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn bg-orange-400 border-orange-400 rounded-sm">
+            Get Started
+          </button>
         </div>
       </div>
     </div>

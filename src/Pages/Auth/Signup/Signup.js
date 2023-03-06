@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import LoginImg from "../../../assets/images/login/login.svg";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Signup = () => {
+  const { createUser } = useContext(AuthContext);
   const handleSignup = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    createUser(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
   return (
     <div className="hero my-20">
@@ -17,7 +32,7 @@ const Signup = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
           <div className="card-body">
             <h1 className="text-5xl font-bold mb-5">Sign Up</h1>
-            <form action="">
+            <form action="" onSubmit={handleSignup}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -34,6 +49,7 @@ const Signup = () => {
                 </label>
                 <input
                   type="text"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                 />
@@ -44,6 +60,7 @@ const Signup = () => {
                 </label>
                 <input
                   type="text"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                 />
@@ -55,7 +72,6 @@ const Signup = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  onClick={(event) => handleSignup(event)}
                   type="submit"
                   className="btn bg-orange-400 border-orange-400"
                   value="Sign In"

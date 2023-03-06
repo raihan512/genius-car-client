@@ -69,7 +69,7 @@ const Header = () => {
       <div className="navbar-end">
         <Link
           to="/login"
-          className="btn bg-orange-400 border-orange-400 rounded-md"
+          className="btn bg-orange-400 border-orange-400 rounded-sm"
         >
           Get started
         </Link>

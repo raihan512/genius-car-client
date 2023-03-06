@@ -19,10 +19,10 @@ const BannerItem = ({ banner }) => {
         </p>
       </div>
       <div className="absolute flex justify-start transform -translate-y-2/4 top-3/4 left-5 mt-20">
-        <button className="btn btn-warning mr-5 rounded-none">
+        <button className="btn bg-orange-400 mr-5 rounded-none rounded-sm">
           Discover More
         </button>
-        <button className="btn btn-warning btn-outline rounded-none">
+        <button className="btn hover:bg-orange-400 border-orange-400 text-orange-400 btn-outline rounded-none rounded-sm">
           Latest Project
         </button>
       </div>
